@@ -5,7 +5,8 @@
   "main": "controller.mjs",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon controller.mjs"
+    "start": "concurrently \"npm run server\" \"cd ../frontend && npm start\"",
+    "server": "nodemon controller.mjs"
   },
   "repository": {
     "type": "git",
@@ -18,6 +19,7 @@
   },
   "homepage": "https://github.com/nelkalm/ExercisesApp#readme",
   "dependencies": {
+    "concurrently": "^7.6.0",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "express-async-handler": "^1.2.0",
