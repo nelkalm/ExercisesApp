@@ -43,7 +43,8 @@ const exerciseSchema = mongoose.Schema({
   date: {
     type: Date,
     required: true,
-    default: Date.now,
+    min: "011-21-2022",
+    default: new Date(),
   },
 });
 

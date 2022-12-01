@@ -1,8 +1,8 @@
 import React from "react";
 import { FaTrash, FaPencilAlt } from "react-icons/fa";
 
-const Row = ({ exercise }) => {
-  const { name, reps, weight, unit, date } = exercise;
+const Row = ({ exercise, handleEdit, handleDelete }) => {
+  const { name, reps, weight, unit, date, _id } = exercise;
   return (
     <tr>
       <td>{name}</td>
@@ -11,10 +11,18 @@ const Row = ({ exercise }) => {
       <td>{unit}</td>
       <td>{date.toLocaleString("en-US").slice(0, 10)}</td>
       <td>
-        <FaPencilAlt />
+        <FaPencilAlt
+          onClick={() => {
+            handleEdit(exercise);
+          }}
+        />
       </td>
       <td>
-        <FaTrash />
+        <FaTrash
+          onClick={() => {
+            handleDelete(_id);
+          }}
+        />
       </td>
     </tr>
   );
