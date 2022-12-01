@@ -1,14 +1,14 @@
 import React, { useState } from "react";
-import { Form, useNavigate } from "react-router-dom";
-import FormField from "../components/FormField";
-import FormSelect from "../components/FormSelect";
+import { useNavigate } from "react-router-dom";
 
 const EditPage = ({ exercise }) => {
   const [name, setName] = useState(exercise.name);
   const [reps, setReps] = useState(exercise.reps);
   const [weight, setWeight] = useState(exercise.weight);
   const [unit, setUnit] = useState(exercise.unit);
-  const [date, setDate] = useState(exercise.date);
+  const [date, setDate] = useState(
+    exercise.date.toLocaleString("en-US").slice(0, 10)
+  );
 
   const unitList = ["lbs", "lbs", "miles", "m", "km"];
 
@@ -48,41 +48,50 @@ const EditPage = ({ exercise }) => {
             e.preventDefault();
           }}
         >
-          <FormField
-            label="Exercise name"
-            type="text"
-            name="name"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-          />
-          <FormField
-            label="Number of reps"
-            type="number"
-            name="reps"
-            value={reps}
-            onChange={(e) => setReps(e.target.value)}
-          />
-          <FormField
-            label="Weight"
-            type="number"
-            name="weight"
-            value={weight}
-            onChange={(e) => setWeight(e.target.value)}
-          />
-          <FormSelect
-            label="Unit"
-            name="unit"
-            value={unit}
-            list={unitList}
-            onChange={(e) => setUnit(e.target.value)}
-          />
-          <FormField
-            label="Date"
-            type="date"
-            name="date"
-            value={date}
-            onChange={(e) => setDate(e.target.value)}
-          />
+          <fieldset>
+            <label htmlFor="name">Exercise name</label>
+            <input
+              type="text"
+              id="name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+            />
+            <label htmlFor="reps">Number of reps</label>
+            <input
+              type="number"
+              id="reps"
+              value={reps}
+              onChange={(e) => setReps(e.target.value)}
+            />
+            <label htmlFor="weight">Amount of weight</label>
+            <input
+              type="number"
+              id="weight"
+              value={weight}
+              onChange={(e) => setWeight(e.target.value)}
+            />
+            <label htmlFor="unit">Select unit</label>
+            <select
+              onChange={(e) => setUnit(e.target.value)}
+              value={unit}
+              id={unit}
+            >
+              {unitList.map((item, index) => {
+                return (
+                  <option key={index} value={item}>
+                    {item}
+                  </option>
+                );
+              })}
+            </select>
+            <label htmlFor="date">Date of exercise performed</label>
+            <input
+              type="date"
+              id="date"
+              value={date}
+              onChange={(e) => setDate(e.target.value)}
+            />
+          </fieldset>
           <button onClick={editExercise} id="submit">
             Save
           </button>

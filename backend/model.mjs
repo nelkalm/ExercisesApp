@@ -37,7 +37,7 @@ const exerciseSchema = mongoose.Schema({
   unit: {
     type: String,
     required: true,
-    enum: ["lbs", "lbs", "miles", "m", "km"],
+    enum: ["lbs", "kg", "miles", "m", "km"],
     default: "lbs",
   },
   date: {
