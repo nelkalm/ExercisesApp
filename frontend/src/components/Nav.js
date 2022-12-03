@@ -2,15 +2,12 @@ import { Link } from "react-router-dom";
 
 function Nav() {
   return (
-    <nav>
+    <nav className="nav-container">
       <Link to="/" as={Link}>
         Home
       </Link>
       <Link to="/create" as={Link}>
         Create
-      </Link>
-      <Link to="/edit" as={Link}>
-        Edit
       </Link>
     </nav>
   );

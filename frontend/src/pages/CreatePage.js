@@ -35,62 +35,78 @@ const CreatePage = () => {
   return (
     <>
       <article>
-        <h2>Add an exercise in the database</h2>
-        <p>Instructions go here</p>
+        <div className="text-content">
+          <h2>Add an exercise</h2>
+          <p>
+            Enter the exercise name, number of reps, and the amount of weight
+            for the reps performed. Select unit option: pounds (lbs), kilograms
+            (kg), miles, meters (m), and kilometers (km). And finally, select
+            the date the exercise was performed. All fields must be entered.
+          </p>
+        </div>
         <form
+          className="form-input"
           onSubmit={(e) => {
             e.preventDefault();
           }}
         >
-          <fieldset>
-            <label htmlFor="name">Exercise name</label>
-            <input
-              type="text"
-              id="name"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              required
-            />
-            <label htmlFor="reps">Number of reps</label>
-            <input
-              type="number"
-              id="reps"
-              value={reps}
-              onChange={(e) => setReps(e.target.value)}
-              required
-            />
-            <label htmlFor="weight">Amount of weight</label>
-            <input
-              type="number"
-              id="weight"
-              value={weight}
-              onChange={(e) => setWeight(e.target.value)}
-              required
-            />
-            <label htmlFor="unit">Select unit</label>
-            <select
-              onChange={(e) => setUnit(e.target.value)}
-              value={unit}
-              id={unit}
-              required
-            >
-              {unitList.map((item, index) => {
-                return (
-                  <option key={index} value={item}>
-                    {item}
-                  </option>
-                );
-              })}
-            </select>
-            <label htmlFor="date">Date of exercise performed</label>
-            <input
-              type="date"
-              id="date"
-              value={date}
-              onChange={(e) => setDate(e.target.value)}
-              required
-            />
-          </fieldset>
+          <label htmlFor="name" className="form-label">
+            Exercise name
+          </label>
+          <input
+            type="text"
+            id="name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            required
+          />
+          <label htmlFor="reps" className="form-label">
+            Number of reps
+          </label>
+          <input
+            type="number"
+            id="reps"
+            value={reps}
+            onChange={(e) => setReps(e.target.value)}
+            required
+          />
+          <label htmlFor="weight" className="form-label">
+            Amount of weight
+          </label>
+          <input
+            type="number"
+            id="weight"
+            value={weight}
+            onChange={(e) => setWeight(e.target.value)}
+            required
+          />
+          <label htmlFor="unit" className="form-label">
+            Select unit
+          </label>
+          <select
+            onChange={(e) => setUnit(e.target.value)}
+            value={unit}
+            id={unit}
+            required
+          >
+            {unitList.map((item, index) => {
+              return (
+                <option key={index} value={item}>
+                  {item}
+                </option>
+              );
+            })}
+          </select>
+          <label htmlFor="date" className="form-label">
+            Date of exercise performed
+          </label>
+          <input
+            type="date"
+            id="date"
+            value={date}
+            onChange={(e) => setDate(e.target.value)}
+            required
+          />
           <button onClick={createExercise} id="submit">
             Save
           </button>

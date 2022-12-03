@@ -12,6 +12,7 @@ const Row = ({ exercise, handleEdit, handleDelete }) => {
       <td>{date.toLocaleString("en-US").slice(0, 10)}</td>
       <td>
         <FaPencilAlt
+          className="icon"
           onClick={() => {
             handleEdit(exercise);
           }}
@@ -19,6 +20,7 @@ const Row = ({ exercise, handleEdit, handleDelete }) => {
       </td>
       <td>
         <FaTrash
+          className="icon"
           onClick={() => {
             handleDelete(_id);
           }}

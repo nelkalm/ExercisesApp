@@ -13,23 +13,25 @@ function App() {
   return (
     <>
       <Router>
-        <header>
-          <h1>YouTrain</h1>
-          <p>Track Your Performance</p>
-        </header>
-        <Nav />
-        <main>
-          <Routes>
-            <Route
-              path="/"
-              element={<HomePage setExercise={setExercise} />}
-              exact
-            />
-            <Route path="/create" element={<CreatePage />} />
-            <Route path="/edit" element={<EditPage exercise={exercise} />} />
-          </Routes>
-        </main>
-        <footer>&copy; 2022 Nelson Lu</footer>
+        <div className="container">
+          <header>
+            <h1 className="logo">YouTrain</h1>
+            <p>Track Your Performance</p>
+          </header>
+          <Nav />
+          <main>
+            <Routes>
+              <Route
+                path="/"
+                element={<HomePage setExercise={setExercise} />}
+                exact
+              />
+              <Route path="/create" element={<CreatePage />} />
+              <Route path="/edit" element={<EditPage exercise={exercise} />} />
+            </Routes>
+          </main>
+          <footer>&copy; 2022 Nelson Lu</footer>
+        </div>
       </Router>
     </>
   );
