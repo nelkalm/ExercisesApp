@@ -102,6 +102,6 @@ Delete an exercise by clicking on the trash icon in the exercises table.
 
 Distributed under the MIT License. See [LICENSE](https://github.com/nelkalmlu/ExerciseApp/blob/main/LICENSE.md) for more information.
 
-## Authors
+## Author
 
 * **Nelson Lu** - *OSU Computer Science Student* - [Nelson Lu](https://github.com/nelkalm) - *Created the YouTrain App*
