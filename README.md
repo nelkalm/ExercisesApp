@@ -25,7 +25,7 @@ A full-stack MERN exercise tracker app built using React.
 * [Roadmap](#roadmap)
 * [Contributing](#contributing)
 * [License](#license)
-* [Authors](#authors)
+* [Author](#author)
 * [Acknowledgements](#acknowledgements)
 
 ## About The Project
